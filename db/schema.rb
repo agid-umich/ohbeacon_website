@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_06_154201) do
+ActiveRecord::Schema.define(version: 2025_09_22_145816) do
 
   create_table "course_group_students", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "course_group_id", null: false
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2023_09_06_154201) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uid"
-    t.string "oauth_token"
+    t.string "oauth_token", limit: 5000
     t.datetime "oauth_expires_at"
     t.string "provider"
     t.string "avatar_url", limit: 5000
