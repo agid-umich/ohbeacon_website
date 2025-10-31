@@ -8,3 +8,4 @@ RUN bundle install
 ADD . /usr/src/eecshelp
 EXPOSE 3000
 ENTRYPOINT ["/usr/src/eecshelp/script/wait-for-it.sh", "-t", "60", "db:3306", "--", "bundle", "exec", "rails", "server", "-p", "3000", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
