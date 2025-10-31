@@ -73,6 +73,9 @@ var Request = React.createClass({
       }
     }
 
+    //let beaconId = this.props.request.beacon_id;
+      //if (beaconId) beaconId = <LabeledItem icon="beacon">{beaconId}</LabeledItem>;
+
     return (
       <div className={active + "comment"}>
         <Avatar url={this.props.request.requester.avatar_url} />
@@ -85,6 +88,7 @@ var Request = React.createClass({
             <LabeledItem icon="clock">{this.state.ts}</LabeledItem>
             <LabeledItem icon="marker">{location}</LabeledItem>
             <LabeledItem icon="write">{this.props.request.description}</LabeledItem>
+            <LabeledItem icon="barcode">{this.props.request.beacon_id}</LabeledItem>
             {pinnedByUser}
           </div>
           {actions}

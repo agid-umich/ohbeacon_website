@@ -10,6 +10,12 @@
     </div>
 
     <div class="field">
+        <%= f.label :beacon_id, "Beacon ID" %>
+        <%= f.text_field :beacon_id, maxlength: 100 %>
+    </div>
+
+
+    <div class="field">
         <%= f.label :group_mode %>
         <div class="ui small message">
             <p>Import a list of groups for this course <a href="<%=

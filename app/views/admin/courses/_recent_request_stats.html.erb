@@ -18,7 +18,8 @@
                 <td><%= request.course_queue.name %></td>
                 <td>
                     <strong>Location:</strong> <%= request.location.present? ? request.location : "N/A" %><br />
-                    <strong>Description:</strong> <%= request.description.present? ? request.description : "N/A" %>
+                    <strong>Description:</strong> <%= request.description.present? ? request.description : "N/A" %><br />
+                    <strong>Beacon ID:</strong> <%= request.beacon_id.present? ? request.beacon_id : "N/A" %>
             </td>
             <td>
                 <%= request.resolver.name %> (<%= request.resolver.email.split('@')[0] %>)<br /> at <%= request.resolved_at.in_time_zone("Eastern Time (US & Canada)").strftime("%r %b %d %Y %Z") %>

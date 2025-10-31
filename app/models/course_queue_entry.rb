@@ -7,6 +7,8 @@ class CourseQueueEntry < ApplicationRecord
 
   validates_length_of :location, maximum: 100, allow_blank: true
   validates_length_of :description, maximum: 100, allow_blank: true
+  validates_length_of :beacon_id, maximum: 100, allow_blank: true
+
 
   def resolve_by!(user)
     self.resolver    = user

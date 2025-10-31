@@ -19,6 +19,7 @@ var StudentPanel = React.createClass({
       return {
         location: '',
         description: '',
+        beacon_id: ' ',
       };
     }
   },
@@ -33,6 +34,7 @@ var StudentPanel = React.createClass({
     this.props.requestHelp({
       location: this.state.myRequest.location,
       description: this.state.myRequest.description,
+      beacon_id: this.state.myRequest.beacon_id,
     });
   },
   cancelRequest: function () {
@@ -105,6 +107,17 @@ var StudentPanel = React.createClass({
           <div className="field">
             <label>Location</label>
             <input disabled={isDisabled} onChange={this.update.bind(this, 'location')} value={this.state.myRequest.location} type="text" maxLength="100" />
+          </div>
+          <div className="field">
+            <label>Beacon ID</label>
+            <input
+              id="beacon-id-input"
+              disabled={isDisabled}
+              onChange={this.update.bind(this, 'beacon_id')}
+              value={this.state.myRequest.beacon_id}
+              type="text"
+              maxLength="100"
+            />
           </div>
           <div className="field">
             <label>Description</label>

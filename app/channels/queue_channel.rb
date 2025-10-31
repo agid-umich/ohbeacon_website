@@ -14,7 +14,8 @@ class QueueChannel < ApplicationCable::Channel
         requester: current_user,
         group: current_user.course_group_for_course(@course_queue.course),
         location: data['location'],
-        description: data['description']
+        description: data['description'],
+        beacon_id: data['beacon_id']
       )
 
       broadcast_request_change('new_request', new_request)
@@ -81,7 +82,8 @@ class QueueChannel < ApplicationCable::Channel
 
     request.update!(
       location: data['location'],
-      description: data['description']
+      description: data['description'],
+      beacon_id: data['beacon_id']
     )
 
     broadcast_request_change('update_request', request)

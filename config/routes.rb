@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       get 'online_instructors'
       get 'instructor_message'
       get 'other_queues'
+      get 'beacon_id'
     end
   end
 

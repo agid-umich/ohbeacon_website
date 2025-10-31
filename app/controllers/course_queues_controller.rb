@@ -32,6 +32,12 @@ class CourseQueuesController < ApplicationController
     @queues = Course.find(@course_queue.course_id).course_queues.where.not(id: @course_queue.id).order(:name)
   end
 
+  def show_beacon_id
+    # If beacon_id is on the CourseQueue model:
+    render json: { beacon_id: @course_queue.beacon_id }
+  end
+
+
   private
   def set_course_queue
     @course_queue = CourseQueue.find(params[:id])

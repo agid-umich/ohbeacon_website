@@ -48,7 +48,7 @@ var CourseQueue = React.createClass({
       if (wasEmpty && isInactiveWindow && isInstructor) {
         this.notify('New request from ' + request.requester.name, false, {
           icon: request.requester.avatar_url,
-          body: request.description || request.location,
+          body: request.description || request.location || request.beacon_id,
         });
       }
     }.bind(this));
@@ -57,7 +57,8 @@ var CourseQueue = React.createClass({
     var index   = mapById(this.state.requests, request.id);
     var arrCopy = copyArr(this.state.requests);
 
-    arrCopy[index] = request;
+    //arrCopy[index] = request;
+    arrCopy[index] = Object.assign({}, arrCopy[index], request);
 
     this.setState({
       requests: arrCopy,

@@ -38,6 +38,11 @@ class Admin::CourseQueuesController < Admin::AdminController
     redirect_to admin_course_url(@course_queue.course)
   end
 
+  def beacon_id
+    @course_queue = CourseQueue.find(params[:id])
+    render json: { beacon_id: @course_queue.beacon_id }
+  end
+
   private
   def set_and_authorize_course_queue
     @course_queue = CourseQueue.find(params[:id])
@@ -56,6 +61,6 @@ class Admin::CourseQueuesController < Admin::AdminController
   end
 
   def course_queue_params
-    params.require(:course_queue).permit(:name, :location, :description, :course_id, :group_mode, :exclusive, :hide_details_from_students, :add_requested_at_jitter)
+    params.require(:course_queue).permit(:name, :location, :description, :beacon_id, :course_id, :group_mode, :exclusive, :hide_details_from_students, :add_requested_at_jitter)
   end
 end

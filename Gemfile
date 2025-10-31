@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.6.0'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 3.3.1'
 # Use MySQL for database
-gem 'mysql2', '~> 0.4.4'
+gem 'mysql2', '~> 0.5.3'
 # Use Google OAuth2 for authentication
 gem 'omniauth-google-oauth2', '~> 0.6.0'
 # For frontend
