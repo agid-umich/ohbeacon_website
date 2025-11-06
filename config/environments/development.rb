@@ -64,5 +64,4 @@ Rails.application.configure do
   config.web_console.whitelisted_ips = '172.18.0.1' # docker
 
   config.active_support.deprecation = :raise
-  
 end

@@ -7,7 +7,7 @@ class CourseQueue < ApplicationRecord
   has_many :course_queue_online_instructors, dependent: :destroy
   has_many :online_instructors, through: :course_queue_online_instructors, class_name: 'User'
 
-  def request(requester:, description:, location:, group:, jitter_fn: lambda {rand(-10..10)})
+  def request(requester:, description:, location:, beacon_id:, group:, jitter_fn: lambda {rand(-10..10)})
     self.with_lock do
       # Check the user's request limit for the course
       if self.course.course_queue_entries.where(resolved_at: nil, requester: requester).count > 0
