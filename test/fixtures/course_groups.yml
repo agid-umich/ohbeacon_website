@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+group1:
+  course: eecs482
+  students:
+      - matt
+      - steve
+
+group2:
+  course: eecs482
+  students:
+      - jim
+      - mary
+
+group3:
+  course: eecs398
+
+group4:
+  course: eecs398
+  students:
+    - bob
+    - jim
+    - mary

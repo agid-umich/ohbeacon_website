@@ -1,0 +1,32 @@
+<%= render 'shared/breadcrumbs', trail: [
+    { title: @course.name, href: url_for(@course)},
+    'Admin'
+] %>
+
+<div class="twelve wide column">
+    <h1 class="ui header">
+        <%= @course.name %>
+        Course Administration
+    </h1>
+
+    <a href="<%= edit_admin_course_url(@course) %>" class="ui button">
+        Edit Course Details
+    </a>
+
+    <h2>Course Queues</h2>
+    <%= render 'queues', queues: @queues %>
+
+    <h2>Course Groups
+        <a href="https://github.com/mterwill/office-hours-help-queue/wiki/Group-mode">
+            <i class="ui help circle small grey icon"></i>
+        </a>
+        <a class="ui labeled icon right floated primary button" href="<%= groups_admin_course_url(@course) %>">
+            <i class="plus icon"></i>
+        Import</a>
+    </h2>
+    <%= render 'groups', groups: @groups %>
+
+    <h2>Course Instructors</h2>
+    <%= render 'self_enroll', code: @course.enrollment_code %>
+    <%= render 'instructors', instructors: @instructors %>
+</div>

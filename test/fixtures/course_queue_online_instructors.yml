@@ -1,0 +1,5 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+matt_online:
+  course_queue: eecs398_queue
+  online_instructor: matt

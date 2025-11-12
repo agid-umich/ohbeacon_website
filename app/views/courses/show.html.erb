@@ -1,0 +1,32 @@
+<%= render 'shared/breadcrumbs', trail: [ @course.name ] %>
+
+<div class="eight wide centered column">
+    <h1 class="ui header"> Available Queues for <%= @course.name %> </h1>
+
+    <% if current_user.instructor_for_course? @course and Time.now < Time.new(2020, 03, 21)    %>
+        <div class="ui info message">
+            <div class="header">New Feature: Private Mode</div>
+            <p>Enable <strong>Private Mode</strong> to hide request details from other students.</p>
+            <p>Configurable in your course's <a href="<%= url_for [:admin, @course] %>">admin panel</a>.</p>
+        </div>
+    <% end %>
+    <div class="ui fluid segment">
+        <% if @queues.empty? %>
+            <h4>No open queues. Try refreshing.</h4>
+        <% else %>
+            <div class="ui large middle aligned selection list">
+                <% @queues.each do |queue| %>
+                    <%= render 'queue', queue: queue %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+    <% if current_user.instructor_for_course?(@course) %>
+        <a class="ui large fluid primary bottom padded button" href="<%= url_for [:admin, @course] %>">
+            Admin Panel
+        </a>
+        <a class="ui large fluid button" href="<%= statistics_admin_course_url(@course) %>">
+            Statistics
+        </a>
+    <% end %>
+</div>

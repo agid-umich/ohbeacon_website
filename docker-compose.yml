@@ -1,0 +1,23 @@
+version: '2'
+services:
+  redis:
+    image: redis:5.0.7
+  db:
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: eecshelp
+      MYSQL_DATABASE: eecshelp
+  web:
+    build: .
+    env_file:
+      - web-variables.env
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/usr/src/eecshelp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    tmpfs:
+      - /usr/src/eecshelp/tmp

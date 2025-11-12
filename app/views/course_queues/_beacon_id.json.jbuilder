@@ -1,0 +1,1 @@
+json.beacon_id @course_queue_entry.beacon_id

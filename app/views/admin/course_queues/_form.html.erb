@@ -1,0 +1,59 @@
+<%= form_for [:admin, @course_queue], html: {class: 'ui form'} do |f| %>
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+    </div>
+
+    <div class="field">
+        <%= f.label :beacon_id, "Beacon ID" %>
+        <%= f.text_field :beacon_id, maxlength: 100 %>
+    </div>
+
+
+    <div class="field">
+        <%= f.label :group_mode %>
+        <div class="ui small message">
+            <p>Import a list of groups for this course <a href="<%=
+            groups_admin_course_url(@course_queue.course) %>">here</a>.</p>
+        </div>
+        <div class="field">
+            <div class="ui toggle checkbox">
+                <%= f.check_box :group_mode %>
+                <label>Enable course groups for this queue
+                    <a href="https://github.com/mterwill/office-hours-help-queue/wiki/Group-mode">
+                        <i class="ui help circle grey icon"></i>
+                    </a>
+                </label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui toggle checkbox">
+                <%= f.check_box :exclusive %>
+                <label>Only allow students in groups to enqueue
+                </label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui toggle checkbox">
+                <%= f.check_box :hide_details_from_students %>
+                <label><strong>Private Mode</strong>: Hide request details (location, description) from other students
+                </label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="ui toggle checkbox">
+                <%= f.check_box :add_requested_at_jitter %>
+                <label><strong>Jitter (beta)</strong>: For the first minute a queue is open, randomize requested_at timestamp by ±10 seconds
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <%= f.hidden_field :course_id %>
+    <%= f.submit 'Submit', class: 'ui button' %>
+<% end %>

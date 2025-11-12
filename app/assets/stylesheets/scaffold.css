@@ -1,0 +1,54 @@
+.main {
+    padding-top: 25px;
+}
+
+.slightly.padded.list {
+    margin-top: 5px;
+}
+
+.ui.list > .item > i.icon {
+    padding-right: 0!important;
+}
+
+.bottom.padded {
+    margin-bottom: 10px!important;
+}
+
+.centered.cards {
+    justify-content: center;
+}
+
+.centered.text {
+    text-align: center;
+}
+
+.padded.user {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.min.segment {
+    min-height: 100px;
+}
+
+.ui.comments {
+    max-width: none!important;
+}
+
+.card {
+    width: 400px!important;
+}
+
+.requests > .comment {
+    padding-left: 12px !important;
+}
+
+.active.comment {
+    border-radius: .1rem 0 0 .1rem !important;
+    border-left: 2px solid #FBBD08 !important;
+    padding-left: 10px !important;
+}
+
+.ack-white-space {
+    white-space: pre-wrap;
+}

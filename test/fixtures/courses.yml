@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+eecs398:
+  name: EECS 398
+  long_name: Computing for Computer Scientists
+  slug: eecs398
+
+eecs482:
+  name: EECS 482
+  long_name: Operating Systems
+  slug: eecs482

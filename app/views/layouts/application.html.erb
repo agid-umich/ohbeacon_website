@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Office Hours Help Queue</title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+        <%= javascript_include_tag 'application' %>
+        <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="ui stackable grid container">
+                <%= yield %>
+
+                <div class="one wide row">
+                    <div class="centered text column">
+                        <%= render 'shared/footer' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

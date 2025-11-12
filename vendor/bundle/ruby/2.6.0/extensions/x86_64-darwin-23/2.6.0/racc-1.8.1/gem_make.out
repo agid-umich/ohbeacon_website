@@ -1,0 +1,15 @@
+current directory: /Users/antonio/ohbeacon_website-main/vendor/bundle/ruby/2.6.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/antonio/.rbenv/versions/2.6.3/bin/ruby -I /Users/antonio/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20251110-27452-34ez6k.rb extconf.rb
+creating Makefile
+
+current directory: /Users/antonio/ohbeacon_website-main/vendor/bundle/ruby/2.6.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /Users/antonio/ohbeacon_website-main/vendor/bundle/ruby/2.6.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/antonio/ohbeacon_website-main/vendor/bundle/ruby/2.6.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20251110-27452-1ra7ojy/racc

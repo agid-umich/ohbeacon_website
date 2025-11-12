@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+matt_eecs398:
+  course: eecs398
+  instructor: matt
+
+matt_eecs482:
+  course: eecs482
+  instructor: matt
